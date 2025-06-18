@@ -9,6 +9,7 @@ const PORT = process.env.PORTNUM;
 const app = express();
 
 const MONGB_UR = process.env.DATABASE_URL;
+const MONGB_UR = process.env.ACCESS;
 // console.log(MONGB_UR);
 
 app.use(express.json());
@@ -53,5 +54,5 @@ app.post("/register", async (req, res) => {
   }
 });
 app.listen(PORT, () => {
-  console.log(`Server Listening at http://localhost:${PORT}`);
+  console.log(`Server Listening at {ACCESS}:${PORT}`);
 });

@@ -53,5 +53,5 @@ app.post("/register", async (req, res) => {
   }
 });
 app.listen(PORT, () => {
-  console.log(`Server Listening at {ACCESS}:${PORT}`);
+  console.log(`Server Listening at ${PORT}`);
 });

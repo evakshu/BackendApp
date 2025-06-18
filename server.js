@@ -8,7 +8,7 @@ const PORT = process.env.PORTNUM;
 
 const app = express();
 
-const MONGB_UR = process.env.DATABASE_URL;
+const MONGB_URI = process.env.DATABASE_URL;
 // console.log(MONGB_UR);
 
 app.use(express.json());

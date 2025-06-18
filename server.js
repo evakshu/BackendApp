@@ -13,15 +13,11 @@ const MONGB_UR = process.env.DATABASE_URL;
 
 app.use(express.json());
 app.use(cors());
-mongoose.connect(MONGB_UR);
-const db = mongoose.connection;
-db.on("error", (err) => {
-  console.error("mongodb connection error ", err);
-});
-
-db.once("open", () => {
-  console.log("mongo is connected");
-});
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB connected'))
 
 const userSchema = new mongoose.Schema({
   Name: String,
